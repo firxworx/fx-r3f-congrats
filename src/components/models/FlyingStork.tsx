@@ -84,16 +84,16 @@ export const FlyingStork: React.FC<
       // yaw slightly back and forth over duration of flight
       // innerGroupRef.current.rotation.y = (Math.sin(start + state.clock.elapsedTime) * Math.PI) / 2
 
-      // make the box fly around a circular path
+      // make the stork fly around a circular path
       groupRef.current.rotation.y -= Math.sin((delta * rotate.factor) / 2) * Math.cos((delta * rotate.factor) / 2) * 1.5
       mixer.update(delta * rotate.speed)
     }
   })
 
   return (
-    <group ref={groupRef} {...props} dispose={null}>
-      <group ref={innerGroupRef} rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
+    <group ref={groupRef} dispose={null}>
+      <group ref={innerGroupRef} {...props}>
+        <group>
           <primitive object={nodes._rootJoint} />
           <mesh
             geometry={nodes.qweewq11Group1_qq2lambert7_0.geometry}
