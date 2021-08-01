@@ -6,9 +6,9 @@ The scene is implemented using react-three-fiber. It features a metallic-looking
 
 ![Project Preview Screenshot](preview.png)
 
-This project was originally created for a colleague and featured a 3D flying version of his company's brand marque instead of a stork. I decided to release the code so I genericized the message and replaced the company logo with a flying stork.
+This project was originally created for a colleague and featured a 3D flying version of his company's brand marque. In releasing this code I genericized the message and replaced the proprietary logo with a flying stork.
 
-There were some minor texture issues with the dancing baby so I decided to use matcap textures instead for an metallic look that I think looks cooler than the original model's textures.
+There were some minor texture issues with the dancing baby so I decided to use matcap textures instead. I think the metallic look is definitely cooler than the model's original textures.
 
 This project was initially inspired by - and borrows from - the following codesandbox posted by @drcmda (<https://twitter.com/0xca0a>), a well-known contributor to the threejs/react-three-fiber ecosystem:
 
@@ -16,10 +16,15 @@ This project was initially inspired by - and borrows from - the following codesa
 
 The models are from Sketchfab and the baby was animated using the stock animations from [Mixamo](https://mixamo.com).
 
+## Blog Post
+
+I wrote a companion blog post for this mini project:
+
+<https://firxworx.com/blog/coding/creating-an-animated-3d-ecard-using-webgl-react-three-fiber-gltf-models-with-animations/>
+
 ## Customizing this Project
 
-I wrote a companion blog post for this mini project. Check it out at: <https://firxworx.com/blog/coding/creating-an-animated-3d-ecard-using-webgl-react-three-fiber-gltf-models-with-animations/>
-
+The following can help you fork + customize this project to suit your purposes:
 ### Importing Models
 
 If you would like to fork this project and customize the scene with additional models, you can find free 3D models for download from sites like <https://sketchfab.com>, <https://free3d.com/>, <https://www.cgtrader.com/>, etc.
@@ -80,3 +85,4 @@ The dancing baby model was inspired by the original dancing baby meme. It was cr
 
 The flying stork model was created by Sketchfab user [chernyi.r](https://sketchfab.com/chernyi.r) and is available for download here: <https://sketchfab.com/3d-models/stork-224ec84e92424611a1ba9178b663be0b>.
 
+Thank-you again to the project's inspiration by @drmcda and the codesandbox: <https://codesandbox.io/embed/react-three-fiber-gltf-loader-animations-c671i?codemirror=1>
