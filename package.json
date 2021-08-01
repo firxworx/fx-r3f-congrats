@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@react-spring/three": "^9.2.4",
-    "@react-three/cannon": "^2.5.0",
     "@react-three/drei": "^7.1.2",
     "@react-three/fiber": "^7.0.5",
     "@testing-library/jest-dom": "^5.11.4",
