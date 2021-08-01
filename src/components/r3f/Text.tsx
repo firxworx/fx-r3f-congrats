@@ -5,8 +5,8 @@ import { useLoader } from '@react-three/fiber'
 /**
  * Component that renders 3D Text of the `blurb` given as props.
  *
- * Loads the font data found in `public/font.blob`. The font includes alphanumeric
- * characters but no puncuation. Support for the space character added.
+ * Loads font data from `public/font.blob`. The font includes alphanumeric characters but no puncuation.
+ * Support for the space character was added manually.
  */
 export const Text: React.FC<{
   blurb: string
@@ -40,7 +40,7 @@ export const Text: React.FC<{
       const sz = new THREE.Vector3()
       meshRef.current.geometry.computeBoundingBox()
 
-      // getSize() copies into the given Vector3
+      // reminder - getSize() copies into the given Vector3
       // @see https://threejs.org/docs/#api/en/math/Box3.getSize
       meshRef.current.geometry?.boundingBox?.getSize(sz)
 
@@ -57,7 +57,7 @@ export const Text: React.FC<{
           // blue shade suitable for baby boy
           color={'#086187'}
         />
-        {/* // dev <meshStandardMaterial color={'#555555'} /> */}
+        {/* // dev (standard material is not affected by lights) <meshStandardMaterial color={'#555555'} /> */}
         {/* // original <meshNormalMaterial /> */}
       </mesh>
     </group>

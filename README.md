@@ -4,7 +4,7 @@ React SPA that renders a 3D webGL scene presenting a message of congratulations 
 
 The scene is implemented using react-three-fiber. It features a metallic-looking baby break-dancing in front of 3D text, encircled by a flock of flying storks.
 
-This project was originally created for a colleague and featured a 3D flying version of his company's brand marque instead of a stork. I decided to release the code so I replaced the company logo with an animated flying stork.
+This project was originally created for a colleague and featured a 3D flying version of his company's brand marque instead of a stork. I decided to release the code so I genericized the message and replaced the company logo with a flying stork.
 
 There were some minor texture issues with the dancing baby so I decided to use matcap textures instead for an metallic look that I think looks cooler than the original model's textures.
 

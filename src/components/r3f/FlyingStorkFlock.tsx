@@ -4,29 +4,28 @@ import { FlyingStork } from '../models/FlyingStork'
 /**
  * Flock of `FlyingStork` components.
  *
- * Adapted from: <https://codesandbox.io/embed/react-three-fiber-gltf-loader-animations-c671i?codemirror=1>
+ * Implementation adapted from: <https://codesandbox.io/embed/react-three-fiber-gltf-loader-animations-c671i?codemirror=1>.
+ *
+ * The original featured 3x different bird models, each with different flight characteristics.
+ * This behaviour was modified for the storks to lend some variance to the scene.
  */
 export const FlyingStorkFlock: React.FC<{}> = () => {
   return (
     <>
-      {new Array(10).fill(undefined).map((_, i) => {
-        // original: const x = (15 + Math.random() * 30) * (Math.round(Math.random()) ? -1 : 1)
+      {new Array(15).fill(undefined).map((_, i) => {
         const x = (15 + Math.random() * 20) * (Math.round(Math.random()) ? -1 : 1)
-        const y = 1 + Math.random() * 10 // orig -> const y = -10 + Math.random() * 20
+        const y = 1 + Math.random() * 15
         const z = -5 + Math.random() * 10
 
-        // the original features 3x different bird models with slightly different flight
-        // characteristics... they are retained here to give some variance to the scene
-        const bird = ['stork', 'parrot', 'flamingo'][Math.round(Math.random() * 2)]
+        const vibe = ['chill', 'groovy', 'movin'][Math.round(Math.random() * 2)]
 
-        // original speeds: stork = 0.5; flamingo = 2; parrot = 5
-        const speed = bird === 'stork' ? 1 : bird === 'flamingo' ? 2 : bird === 'parrot' ? 3 : 1
+        const speed = vibe === 'chill' ? 0.75 : vibe === 'groovy' ? 2 : vibe === 'movin' ? 3 : 1
         const factor =
-          bird === 'stork'
+          vibe === 'chill'
             ? 0.5 + Math.random()
-            : bird === 'flamingo'
+            : vibe === 'groovy'
             ? 0.25 + Math.random()
-            : bird === 'parrot'
+            : vibe === 'movin'
             ? 1 + Math.random() - 0.5
             : 1
 
