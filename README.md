@@ -18,7 +18,7 @@ The models are from Sketchfab and the baby was animated using the stock animatio
 
 ## Customizing this Project
 
-I wrote a companion blog post for this mini project. Check it out at: <>
+I wrote a companion blog post for this mini project. Check it out at: <https://firxworx.com/blog/coding/creating-an-animated-3d-ecard-using-webgl-react-three-fiber-gltf-models-with-animations/>
 
 ### Importing Models
 
