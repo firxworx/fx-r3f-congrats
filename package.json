@@ -1,9 +1,9 @@
 {
   "name": "fx-r3f-congrats",
   "author": "Kevin Firko <hello@firxworx.com>",
-  "description": "react-three-fiber (r3f) scene featuring a break-dancing baby and 3D text offering congrats",
+  "description": "react-three-fiber (r3f) scene featuring a break-dancing baby and 3D text displaying a message of congratulations",
   "homepage": ".",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "cross-env PORT=3045 react-scripts start",
