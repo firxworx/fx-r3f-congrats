@@ -52,7 +52,6 @@ function App() {
           }
         >
           <Sky distance={45000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} />
-
           <TextBlock />
           <FlyingStorkFlock />
           <DancingBaby position={[0, 0, 10]} />

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect, useState } from 'react'
+import React, { useRef, useMemo, useEffect } from 'react'
 import * as THREE from 'three'
 import { useFrame, useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
@@ -52,8 +52,6 @@ export const FlyingStork: React.FC<
 > = ({ rotate, ...props }) => {
   const groupRef = useRef<THREE.Group>()
   const innerGroupRef = useRef<THREE.Group>()
-
-  const [start] = useState(() => Math.random() * 100)
 
   const { scene, materials, animations } = useGLTF(MODEL_FILE) as GLTFResult
 
