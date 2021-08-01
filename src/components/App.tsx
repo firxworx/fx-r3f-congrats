@@ -1,15 +1,18 @@
 import React, { Suspense } from 'react'
+import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Html, Sky, OrbitControls } from '@react-three/drei'
-import { FlyingStorkFlock } from './r3f/FlyingStorkFlock'
 import { DancingBaby } from './models/DancingBaby'
-import { Physics } from '@react-three/cannon'
-import * as THREE from 'three'
+import { FlyingStorkFlock } from './r3f/FlyingStorkFlock'
 import { Text } from './r3f/Text'
 import { GroundPlane } from './r3f/GroundPlane'
 
+/**
+ * Component that renders a 3D block of text that rocks back and forth.
+ */
 export const TextBlock: React.FC = () => {
   const groupRef = React.useRef<THREE.Group>()
+
   useFrame(({ clock }) => {
     if (groupRef.current) {
       groupRef.current.rotation.x =
@@ -18,6 +21,7 @@ export const TextBlock: React.FC = () => {
           Math.sin(clock.getElapsedTime()) * 0.075
     }
   })
+
   return (
     <group ref={groupRef}>
       <Text hAlign="center" position={[0, 11, 0]} blurb="CONGRATS ON THE" />
@@ -27,13 +31,14 @@ export const TextBlock: React.FC = () => {
   )
 }
 
+/**
+ * Full-screen `Canvas` that renders an animated scene with a dancing baby + flying storks +
+ * a message of congrats displayed as 3D text.
+ */
 function App() {
   return (
     <Canvas
-      // concurrent
-      // shadowMap
-      // camera={{ position: [10, 1, -10], fov: 50 }}
-      camera={{ position: [0, 10, 35] }}
+      camera={{ position: [0, 10, 35] }} // note: adding `fov: 50` brings things in close
       style={{ width: '100%', height: '100vh' }}
     >
       <ambientLight intensity={2} />
@@ -46,22 +51,14 @@ function App() {
             </Html>
           }
         >
-          <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} />
+          <Sky distance={45000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} />
 
-          <Physics gravity={[0, -9.8, 0]} tolerance={0} iterations={50} broadphase={'SAP'}>
-            <TextBlock />
-            <FlyingStorkFlock />
-            <DancingBaby position={[0, 0, 10]} />
-            <GroundPlane />
-          </Physics>
+          <TextBlock />
+          <FlyingStorkFlock />
+          <DancingBaby position={[0, 0, 10]} />
+          <GroundPlane />
         </Suspense>
       </group>
-      {/*
-        <mesh rotation={[-0.5 * Math.PI, 0, 0]} position={[0, -1, 0]} receiveShadow>
-          <planeBufferGeometry args={[10, 10, 1, 1]} />
-          <shadowMaterial transparent opacity={0.2} />
-        </mesh>
-      */}
       <OrbitControls />
     </Canvas>
   )
