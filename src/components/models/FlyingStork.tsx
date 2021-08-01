@@ -76,17 +76,19 @@ export const FlyingStork: React.FC<
 
   useFrame((_state, delta) => {
     if (rotate && groupRef.current && innerGroupRef.current) {
-      // move up and down slightly over duration of flight
-      // innerGroupRef.current.position.y = Math.sin(start + state.clock.elapsedTime) * 2.5
-      // the two rotations below create the impression of rolling/banking during flight
-      // ...
-      // innerGroupRef.current.rotation.x = Math.PI / 2 + (Math.sin(start + state.clock.elapsedTime) * Math.PI) / 10
-      // yaw slightly back and forth over duration of flight
-      // innerGroupRef.current.rotation.y = (Math.sin(start + state.clock.elapsedTime) * Math.PI) / 2
-
       // make the stork fly around a circular path
       groupRef.current.rotation.y -= Math.sin((delta * rotate.factor) / 2) * Math.cos((delta * rotate.factor) / 2) * 1.5
       mixer.update(delta * rotate.speed)
+
+      // other ideas from the inspiration example follow (these are untested + likely need tweaking to look good with the stork model in play)
+      // note - the `start` variable was defined above using state set with a random initial value:
+      //
+      // move up and down over duration of flight
+      // innerGroupRef.current.position.y = Math.sin(start + _state.clock.elapsedTime) * 2.5
+      //
+      // create the impression of rolling/banking + yawing over duration of flight
+      // innerGroupRef.current.rotation.x = Math.PI / 2 + (Math.sin(start + state.clock.elapsedTime) * Math.PI) / 10
+      // innerGroupRef.current.rotation.y = (Math.sin(start + state.clock.elapsedTime) * Math.PI) / 2
     }
   })
 
